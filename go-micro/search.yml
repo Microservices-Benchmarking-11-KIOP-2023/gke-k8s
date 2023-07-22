@@ -21,7 +21,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: search-service
+  name: search
 spec:
   selector:
     app: search

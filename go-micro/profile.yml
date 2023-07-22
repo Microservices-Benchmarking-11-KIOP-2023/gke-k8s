@@ -21,7 +21,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: profile-service
+  name: profile
 spec:
   selector:
     app: profile

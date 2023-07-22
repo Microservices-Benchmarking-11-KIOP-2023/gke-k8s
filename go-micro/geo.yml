@@ -21,7 +21,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: geo-service
+  name: geo
 spec:
   selector:
     app: geo
