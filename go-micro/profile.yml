@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: profile
-          image: ghcr.io/microservices-benchmarking-11-kiop-2023/go-rate:latest
+          image: ghcr.io/microservices-benchmarking-11-kiop-2023/go-profile:latest
           ports:
             - containerPort: 8080
 ---
