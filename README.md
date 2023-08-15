@@ -13,8 +13,10 @@ Coming soon...
 When running locally apply 
 
 ```
-kubectl apply -f file_name.yaml
+kubectl apply -f file_name.yaml -n NAMESPACE
 ```
+
+Where NAMESPACE is your namespace
 
 to all YAML files you find here.
 
@@ -23,13 +25,14 @@ to all YAML files you find here.
 After running
 
 ```
+kubectl apply -f go-micro/namespace.yml
 kubectl apply -f go-micro
 ```
 
 Apply:
 
 ```
-minikube start gateway
+minikube start gateway -n go-micro
 ```
 
 This operation should be done automatically when deployed to GKE.

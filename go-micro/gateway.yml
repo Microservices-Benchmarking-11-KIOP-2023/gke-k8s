@@ -2,18 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gateway-deployment
+  namespace: go-micro
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gateway
+      app: go-gateway
   template:
     metadata:
       labels:
-        app: gateway
+        app: go-gateway
     spec:
       containers:
-        - name: gateway
+        - name: go-gateway
           image: ghcr.io/microservices-benchmarking-11-kiop-2023/go-gateway:latest
           ports:
             - containerPort: 8080
@@ -21,10 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gateway
+  name: go-gateway
+  namespace: go-micro
 spec:
   selector:
-    app: gateway
+    app: go-gateway
   type: LoadBalancer
   ports:
     - protocol: TCP
