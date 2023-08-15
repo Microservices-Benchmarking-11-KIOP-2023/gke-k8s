@@ -32,7 +32,7 @@ kubectl apply -f go-micro
 Apply:
 
 ```
-minikube start gateway -n go-micro
+minikube service gateway -n go-micro
 ```
 
 This operation should be done automatically when deployed to GKE.
