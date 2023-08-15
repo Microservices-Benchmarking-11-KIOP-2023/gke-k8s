@@ -18,8 +18,25 @@ kubectl apply -f file_name.yaml
 
 to all YAML files you find here.
 
-Then to view app in browser apply 
+### Go microservices minikube example 
+
+After running
 
 ```
-minikube service frontend-service
+kubectl apply -f go-micro
 ```
+
+Apply:
+
+```
+minikube start gateway
+```
+
+This operation should be done automatically when deployed to GKE.
+URL should be returned. 
+
+To check if everything is okay, visit
+http://127.0.0.1:33903/hotels?inDate=2014-03-17&outDate=2014-03-21&lat=37.7749&lon=-122.4194
+
+and some JSON with data should be returned. Minikube might return different port with each call of this start command, remember to update it.
+
