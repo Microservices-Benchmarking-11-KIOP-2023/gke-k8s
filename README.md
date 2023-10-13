@@ -43,3 +43,11 @@ http://127.0.0.1:33903/hotels?inDate=2014-03-17&outDate=2014-03-21&lat=37.7749&l
 
 and some JSON with data should be returned. Minikube might return different port with each call of this start command, remember to update it.
 
+#### Delete everything in namespace
+
+Useful when you're done
+
+```
+kubectl delete all --all -n NAMESPACE
+kubectl delete namespace NAMESPACE
+```
