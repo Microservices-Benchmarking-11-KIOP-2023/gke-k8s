@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rate-deployment
+  namespace: java-micro-rest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rate
+  template:
+    metadata:
+      labels:
+        app: rate
+    spec:
+      containers:
+        - name: rate
+          image: ghcr.io/microservices-benchmarking-11-kiop-2023/java-rate-rest:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rate
+  namespace: java-micro-rest
+spec:
+  selector:
+    app: rate
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
