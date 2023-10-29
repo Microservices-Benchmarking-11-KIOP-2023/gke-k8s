@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geo-deployment
+  namespace: java-micro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: geo
+  template:
+    metadata:
+      labels:
+        app: geo
+    spec:
+      containers:
+        - name: geo
+          image: ghcr.io/microservices-benchmarking-11-kiop-2023/java-geo-grpc:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: geo
+  namespace: java-micro
+spec:
+  selector:
+    app: geo
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
